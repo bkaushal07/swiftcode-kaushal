@@ -14,7 +14,9 @@ public class NewsAgentService {
     public NewsAgentResponse getNewsAgentResponse(String query, UUID sessionId){
         NewsAgentResponse newsAgentResponse = new NewsAgentResponse();
         try{
+            //creating websocket for dialogflow(NLP) api
             WSRequest queryRequest = WS.url("http:/api.api.ai/api/query");
+            //set query params that has to be sent to the api
             CompletionStage<WSResponse> responsePromise =queryRequest
                     .setQueryParameter("v","20150910")
                     .setQueryParameter("query",query)
@@ -23,6 +25,8 @@ public class NewsAgentService {
                     .setQueryParameter("timezone","2018-13-04T16:57:23+0530")
                     .setHeader("Authorization","Bearer 054a388ef08e46c3beb61cd9a12dd13f")
                     .get();
+            //collect the response from api
+            //this api will return keyword, source and category
             JsonNode response = responsePromise.thenApply(WSResponse::asJson).toCompletableFuture().get();
             newsAgentResponse.query = response.get("result").get("parameters").get("keyword").asText().isEmpty() ?
                     (response.get("result").get("parameters").get("source").asText().isEmpty()
