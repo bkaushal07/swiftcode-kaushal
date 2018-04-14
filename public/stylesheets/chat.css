@@ -1,1 +1,31 @@
+html,
+body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
 
+#message-pane {
+    background: linear-gradient(#4286f4, #000000);
+}
+
+#form-card {
+    margin: 0px;
+}
+
+.material-icons {
+    font-size: 30px !important;
+    color: white;
+}
+
+.md-custom {
+    background: linear-gradient(#4286f4, #000000);
+}
+
+.message-card {
+    max-width: 75%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
