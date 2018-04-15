@@ -8,20 +8,21 @@ body {
 
 #message-pane {
     background: linear-gradient(#4286f4, #000000);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(https://cdn.dribbble.com/users/1044993/screenshots/3859330/escape_from_work_animation.gif);
 }
 
 #form-card {
     margin: 0px;
+    background: #f2f4f7;
 }
 
 .material-icons {
     font-size: 30px !important;
-    color: white;
+    color: black;
 }
 
-.md-custom {
-    background: linear-gradient(#4286f4, #000000);
-}
 
 .message-card {
     max-width: 75%;
