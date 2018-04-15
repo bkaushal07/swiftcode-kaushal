@@ -23,7 +23,7 @@ public class FeedService
             WSRequest feedRequest = WS.url("http://news.google.com/news");
             //set the params like keyword(retrieved from dialogflow) to the google news api
             CompletionStage<WSResponse> responsePromise =feedRequest
-                    .setQueryParameter("q","ipl")
+                    .setQueryParameter("q",query)
                     .setQueryParameter("output","rss")
                     .get();
             Document feedResponse = responsePromise.thenApply(WSResponse::asXml).toCompletableFuture().get();
